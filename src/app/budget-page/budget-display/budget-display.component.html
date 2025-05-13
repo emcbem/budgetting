@@ -1,0 +1,22 @@
+<ng-container *ngIf="userStore.user$ | async as user; else NoUser">
+  <ng-container *ngIf="user.budgets?.length; else NoBudgets">
+    <ng-container *ngIf="user.budgets as budgets">
+      <h3>Budgets</h3>
+      <ul>
+        @for (budget of user.budgets; track budget.id) {
+        <li>
+          <budget-list-card [editable]="true" [budget]="budget" />
+        </li>
+        }
+      </ul>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #NoUser>
+  <p>No user found.</p>
+</ng-template>
+
+<ng-template #NoBudgets>
+  <p>No budgets found.</p>
+</ng-template>

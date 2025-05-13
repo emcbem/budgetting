@@ -1,0 +1,23 @@
+<div class="budget-card">
+  <div class="budget-info">
+    <p class="budget-name">{{ budget.name }}</p>
+    <div class="budget-percentage-container">
+      <ng-container *ngIf="!editing; else editPercentage">
+        <p class="budget-percentage">{{ budget.percentage }}%</p>
+      </ng-container>
+      <ng-template #editPercentage>
+        <input
+          type="number"
+          [(ngModel)]="updateBudgetRequest.percentage"
+          class="percentage-input"
+        />%
+      </ng-template>
+      <button class="edit-btn" (click)="editing = !editing">✏️</button>
+    </div>
+  </div>
+
+  <div class="budget-actions" *ngIf="editing">
+    <button (click)="UpdateBudget()" class="update-btn">Update</button>
+    <button (click)="DeleteBudget()" class="delete-btn">Delete</button>
+  </div>
+</div>

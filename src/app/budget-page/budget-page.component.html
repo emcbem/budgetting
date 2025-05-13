@@ -1,2 +1,4 @@
-Name of Budget: <input type="text" [formControl]="budgetNameControl" (keyup.enter)="SubmitForm()"/>
-<button (click)="SubmitForm()">Submit</button>
+<logged-in (show)="true">
+    <budget-form></budget-form>
+    <budget-display></budget-display>
+</logged-in>

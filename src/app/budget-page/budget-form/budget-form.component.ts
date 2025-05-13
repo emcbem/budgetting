@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { BudgetApiService } from '../../../services/budget-api/budget-api.service';
+import { BudgetRequest } from '../../../data/requests/Adds/BudgetRequest';
+import { UserStoreService } from '../../../services/user-store/user-store.service';
+
+@Component({
+  selector: 'budget-form',
+  imports: [ReactiveFormsModule],
+  templateUrl: './budget-form.component.html',
+  styleUrl: './budget-form.component.css',
+})
+export class BudgetFormComponent {
+  constructor(private budgetApi: BudgetApiService) {}
+
+  budgetNameControl = new FormControl('');
+
+  public SubmitForm(): void {
+    this.budgetApi.CreateUserBudget({
+      name: this.budgetNameControl.value,
+    } as BudgetRequest);
+    console.log(this.budgetNameControl.value);
+    this.budgetNameControl.setValue('');
+  }
+}

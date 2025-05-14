@@ -1,1 +1,17 @@
-<p>allocation-page works!</p>
+<div class="allocation-container">
+    <p class="allocation-title">
+        Allocate Pay
+    </p>
+    <div class="allocation-form">
+        <div class="allocation-input">
+            <label>Total Made</label>
+            <div class="allocation-input-number">
+                <input type="number" [(ngModel)]="totalPay"/>
+                <p>$</p>
+            </div>
+        </div>
+        <div class="allocation-button-container">
+            <button (click)="SubmitPay()" class="allocation-button">Send to budgets!</button>
+        </div>
+    </div>
+</div>

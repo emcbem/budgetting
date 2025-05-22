@@ -4,4 +4,4 @@ Name of Budget:
     [formControl]="budgetNameControl"
     (keyup.enter)="SubmitForm()"
     />
-    <button (click)="SubmitForm()">Submit</button>
+    <app-button ButtonInnards="Submit" (ClickEvent)="SubmitForm()"/>

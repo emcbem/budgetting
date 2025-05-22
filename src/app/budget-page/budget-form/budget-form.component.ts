@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { BudgetApiService } from '../../../services/budget-api/budget-api.service';
 import { BudgetRequest } from '../../../data/requests/Adds/BudgetRequest';
-import { UserStoreService } from '../../../services/user-store/user-store.service';
+import { ButtonComponent } from '../../components/button/button.component';
 
 @Component({
   selector: 'budget-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './budget-form.component.html',
   styleUrl: './budget-form.component.css',
 })

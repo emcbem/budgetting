@@ -1,0 +1,21 @@
+body {
+    background-color: var(--color-bud-white-50);
+}
+
+body div {
+    min-width: screen;
+    min-height: screen;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+@media (max-width: 768px) {    
+    body {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+
+
+}
+

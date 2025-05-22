@@ -1,9 +1,17 @@
-<body>
-  <nav class="navbar">
-    <div class="logo">MySite</div>
-    <ul>
-      <nav-link [href]="'budget'" [title]="'Budgets'"/>
-      <nav-link [href]="'allocate'" [title]="'Allocate Pay'"/>
-    </ul>
-    </nav>
-</body>
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <div class="logo-container">
+    <logo/>
+  </div>
+
+  <button class="hamburger" (click)="toggleMenu()" aria-label="Menu">
+    ☰
+  </button>
+
+  <ul [class]="menuOpen ? 'open' : 'closed'">
+    <nav-link [href]="'budget'" [title]="'Budgets'" (click)="closeMenu()"></nav-link>
+    <nav-link [href]="'allocate'" [title]="'Allocate Pay'" (click)="closeMenu()"></nav-link>
+    <nav-link [href]="'ai-budget'" [title]="'AI Suggestions'" (click)="closeMenu()"></nav-link>
+    <nav-link href="account" title="Profile" (click)="closeMenu()"></nav-link>
+  </ul>
+</nav>

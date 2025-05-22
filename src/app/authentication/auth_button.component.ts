@@ -3,7 +3,7 @@ import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT, CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-auth-button',
+  selector: 'auth-button',
   imports: [CommonModule],
   template: `
     <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
@@ -13,11 +13,16 @@ import { DOCUMENT, CommonModule } from '@angular/common';
     </ng-container>
 
     <ng-template #loggedOut>
-      <button (click)="auth.loginWithRedirect()">Log in</button>
+      <button (click)="LogIn()">Log in</button>
     </ng-template>
   `,
   standalone: true
 })
 export class AuthButtonComponent {
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
+
+  public LogIn()
+  {
+    this.auth.loginWithRedirect({appState: {target: window.location.href}})
+  }
 }

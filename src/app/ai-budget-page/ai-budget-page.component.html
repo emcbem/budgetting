@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="userConcerns"/>
+<button (click)="GetAiResponse()">Get Ai's opinion</button>
+
+<ng-container *ngIf="aiResponse$ | async as aiResponse">
+    <p>{{aiResponse.overview}}</p>
+    <ul>
+        <li *ngFor="let budget of aiResponse.aiBudgets"><p>{{budget.name}} - {{budget.incomePercentage}}</p><p>{{budget.description}}</p></li>
+    </ul>
+    <button (click)="AcceptAiResponse()">Accept</button>
+</ng-container>
+
+<ng-container *ngIf="isLoadingAiResponse">
+    <p>LOADING ...</p>
+</ng-container>

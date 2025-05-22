@@ -4,6 +4,7 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { routes } from './app.routes';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,14 +14,14 @@ export const appConfig: ApplicationConfig = {
       domain: 'dev-013fwxix4dwe1jea.us.auth0.com',
       clientId: 'JY26bmn56wTqfL8W0HzgfGEN8IQA6CP1',
       authorizationParams: {
-        redirect_uri: window.location.origin,
+        redirect_uri: environment.appUrl,
+
         audience: 'https://dev-013fwxix4dwe1jea.us.auth0.com/api/v2/',
       },
       httpInterceptor: {
         allowedList: [
           {
-            uri: 'http://localhost:8080/secured/*',
-            
+            uri: `${environment.apiUrl}/secured/*`,
           },
         ],
       },

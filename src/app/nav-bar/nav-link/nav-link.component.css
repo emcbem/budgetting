@@ -2,15 +2,15 @@ a {
   color: white;
   text-decoration: none;
   transition: all 0.5s ease;
-  text-decoration-style: 0px;
+  font-size: larger;
 }
 
 .current-site a {
-  color: #007888;
+  color: var(--color-bud-yellow-600);
   text-decoration: underline;
   text-decoration-style: solid;
 }
 
 a:hover {
-  color: #00bcd4 !important;
+  color: var(--color-bud-yellow-700) !important;
 }

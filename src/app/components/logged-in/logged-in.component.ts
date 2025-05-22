@@ -11,5 +11,10 @@ import { AuthService } from '@auth0/auth0-angular';
 export class LoggedInComponent {
   constructor(public auth: AuthService){}
 
-  show: boolean = false
+  show: boolean = false;
+
+  public LogIn()
+  {
+    this.auth.loginWithPopup()
+  }
 }

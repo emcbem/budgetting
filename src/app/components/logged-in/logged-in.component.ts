@@ -6,7 +6,7 @@ import { AuthService } from '@auth0/auth0-angular';
   selector: 'logged-in',
   imports: [CommonModule],
   templateUrl: './logged-in.component.html',
-  styleUrl: './logged-in.component.css'
+  styleUrl: './logged-in.component.scss'
 })
 export class LoggedInComponent {
   constructor(public auth: AuthService){}

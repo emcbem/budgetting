@@ -8,7 +8,7 @@ import { BudgetDisplayComponent } from './budget-display/budget-display.componen
   selector: 'app-budget-page',
   imports: [LoggedInComponent, BudgetFormComponent, BudgetDisplayComponent],
   templateUrl: './budget-page.component.html',
-  styleUrl: './budget-page.component.css'
+  styleUrl: './budget-page.component.scss'
 })
 export class BudgetPageComponent {
 

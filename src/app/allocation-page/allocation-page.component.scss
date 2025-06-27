@@ -1,0 +1,60 @@
+.allocation-container {
+  justify-self: center;
+  justify-items: center;
+  background-color: rgb(233, 228, 222);
+  border-radius: 5%;
+  border-color: aqua;
+  padding: 1rem;
+}
+
+.allocation-title {
+    font-size: 2rem;
+    font-family: 'Trebuchet MS';
+    text-decoration: underline;
+}
+
+div label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.allocation-input-number {
+    display: flex;
+}
+
+.allocation-input {
+    margin-bottom: .5rem;
+}
+
+.allocation-input-number input {
+    padding: 0.5rem;
+    background-color: white;
+    border: solid 1px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.allocation-input-number p {
+    padding: 0.5rem;
+    background-color: white;
+    border: solid 1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-left: none;
+}
+
+.allocation-button {
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 3px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(216, 219, 221);
+    transition: all 0.2s ease;
+}
+
+.allocation-button:hover {
+    background-color: rgb(206, 217, 224);
+    transform: scale(1.05);
+}
+
+
+

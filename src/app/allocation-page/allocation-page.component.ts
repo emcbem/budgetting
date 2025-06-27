@@ -7,7 +7,7 @@ import { AllocationApiService } from '../../services/allocation-api/allocation-a
   selector: 'allocation-page',
   imports: [FormsModule, CommonModule],
   templateUrl: './allocation-page.component.html',
-  styleUrl: './allocation-page.component.css'
+  styleUrl: './allocation-page.component.scss'
 })
 export class AllocationPageComponent {
   totalPay: number = 0

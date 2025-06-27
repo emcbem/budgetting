@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Enter Budget Name</h2>
+<mat-dialog-content class="budget-form">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Name of Budget</mat-label>
+    <input
+      matInput
+      [formControl]="budgetNameControl"
+      (keyup.enter)="SubmitForm()"
+      placeholder="Enter budget name"
+    />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-flat-button (click)="SubmitForm()">Submit</button>
+</mat-dialog-actions>

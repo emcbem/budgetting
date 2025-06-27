@@ -6,7 +6,7 @@ import { LogoComponent } from './logo/logo.component';
   selector: 'nav-bar',
   imports: [NavLinkComponent, LogoComponent],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
   menuOpen = false;

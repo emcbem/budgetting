@@ -1,15 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { Budget } from '../../../../data/budget';
 import { BudgetApiService } from '../../../../services/budget-api/budget-api.service';
 import { UpdateBudgetReqeust } from '../../../../data/requests/Updates/UpdateBudgetRequest';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'budget-list-card',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './budget-list-card.component.html',
-  styleUrl: './budget-list-card.component.css',
+  styleUrl: './budget-list-card.component.scss',
   inputs: ['editable', 'budget'],
 })
 export class BudgetListCardComponent {
@@ -17,11 +17,17 @@ export class BudgetListCardComponent {
   @Input() budget!: Budget;
   public updateBudgetRequest: UpdateBudgetReqeust = {percentage: 0} as UpdateBudgetReqeust
   public editing = false;
+  public form: FormControl = new FormControl(0)
 
+  constructor(private budgetService: BudgetApiService) {}
 
-  constructor(private budgetService: BudgetApiService) {
-    console.log(this.budget)
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['budget'] && this.budget) {
+      this.form.setValue(this.budget.percentage ?? 0);
+    }
   }
+
 
   public DeleteBudget() {
     this.budgetService.DeleteUserBudget(this.budget.id);
@@ -29,7 +35,7 @@ export class BudgetListCardComponent {
 
   public UpdateBudget() {
     this.updateBudgetRequest.id = this.budget.id;
-
+    this.updateBudgetRequest.percentage = this.form.value ?? 0
     if(!this.updateBudgetRequest.name)
     {
       this.updateBudgetRequest.name = this.budget.name

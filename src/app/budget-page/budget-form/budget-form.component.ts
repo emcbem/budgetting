@@ -1,25 +1,21 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { BudgetApiService } from '../../../services/budget-api/budget-api.service';
-import { BudgetRequest } from '../../../data/requests/Adds/BudgetRequest';
-import { ButtonComponent } from '../../components/button/button.component';
+import { CommonModule } from '@angular/common';
+import { BudgetFormDialogComponent } from './budget-form-dialog/budget-form-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'budget-form',
-  imports: [ReactiveFormsModule, ButtonComponent],
+  imports: [CommonModule, MatIconModule, MatButtonModule, MatDividerModule],
   templateUrl: './budget-form.component.html',
-  styleUrl: './budget-form.component.css',
+  styleUrl: './budget-form.component.scss',
 })
 export class BudgetFormComponent {
-  constructor(private budgetApi: BudgetApiService) {}
+  constructor(private dialog: MatDialog){}
 
-  budgetNameControl = new FormControl('');
-
-  public SubmitForm(): void {
-    this.budgetApi.CreateUserBudget({
-      name: this.budgetNameControl.value,
-    } as BudgetRequest);
-    console.log(this.budgetNameControl.value);
-    this.budgetNameControl.setValue('');
+  public AddNew(): void {
+    const dialogRef = this.dialog.open(BudgetFormDialogComponent, {})
   }
 }

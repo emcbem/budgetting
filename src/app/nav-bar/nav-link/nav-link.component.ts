@@ -6,7 +6,7 @@ import { Router, RouterModule } from '@angular/router';
   inputs: ['href', 'title'],
   imports: [RouterModule],
   templateUrl: './nav-link.component.html',
-  styleUrl: './nav-link.component.css',
+  styleUrl: './nav-link.component.scss',
 })
 export class NavLinkComponent {
   @Input() href!: string;

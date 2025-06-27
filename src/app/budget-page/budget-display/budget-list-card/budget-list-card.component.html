@@ -9,7 +9,7 @@
       <ng-template #editPercentage>
         <input
           type="number"
-          [(ngModel)]="updateBudgetRequest.percentage"
+          [formControl]="form"
           class="percentage-input"
         />%
       </ng-template>

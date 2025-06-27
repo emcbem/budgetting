@@ -9,7 +9,7 @@ import { AiBudgetRequest } from '../../data/Ai/ai-budget-request';
   selector: 'app-ai-budget-page',
   imports: [FormsModule, CommonModule],
   templateUrl: './ai-budget-page.component.html',
-  styleUrl: './ai-budget-page.component.css'
+  styleUrl: './ai-budget-page.component.scss'
 })
 export class AiBudgetPageComponent {
   userConcerns:string = '';

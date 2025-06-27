@@ -1,7 +1,3 @@
-Name of Budget:
-    <input
-    type="text"
-    [formControl]="budgetNameControl"
-    (keyup.enter)="SubmitForm()"
-    />
-    <app-button ButtonInnards="Submit" (ClickEvent)="SubmitForm()"/>
+<button mat-mini-fab (click)="AddNew()" >
+    <mat-icon>add</mat-icon>
+</button>

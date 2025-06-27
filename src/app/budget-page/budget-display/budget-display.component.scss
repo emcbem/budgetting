@@ -5,5 +5,45 @@
 }
 
 .budget-container {
-    max-width: 50vw;
+    width: 100%;
+}
+
+.delete-button {
+    color: var(--color-bud-purple-500);
+    background-color: var(--color-bud-purple-100);
+}
+
+.mat-column-buttons {
+    padding-left: auto;
+}
+
+.mat-column-name {
+    border-right: 1px solid currentColor;
+    max-width: 10em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;    
+
+    &:not(.mat-mdc-header-cell) {
+        font-weight: bold;
+
+    }
+}
+
+.mat-column-current-total {
+    text-align: right;
+}
+
+.mat-column-is-savings {
+    text-align: center;
+}
+
+.mat-column-percentage {
+    text-align: right;
+}
+
+.button-action-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
 }

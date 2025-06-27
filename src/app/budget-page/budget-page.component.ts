@@ -6,7 +6,7 @@ import { BudgetDisplayComponent } from './budget-display/budget-display.componen
 
 @Component({
   selector: 'app-budget-page',
-  imports: [LoggedInComponent, BudgetFormComponent, BudgetDisplayComponent],
+  imports: [LoggedInComponent, BudgetDisplayComponent],
   templateUrl: './budget-page.component.html',
   styleUrl: './budget-page.component.scss'
 })

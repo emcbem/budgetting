@@ -3,4 +3,5 @@ export interface Budget {
   name: string;
   percentage: number;
   currentTotal: number;
+  isSavings: boolean;
 }

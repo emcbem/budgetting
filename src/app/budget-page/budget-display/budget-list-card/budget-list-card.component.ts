@@ -4,10 +4,11 @@ import { BudgetApiService } from '../../../../services/budget-api/budget-api.ser
 import { UpdateBudgetReqeust } from '../../../../data/requests/Updates/UpdateBudgetRequest';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'budget-list-card',
-  imports: [FormsModule, CommonModule, ReactiveFormsModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule, MatTableModule],
   templateUrl: './budget-list-card.component.html',
   styleUrl: './budget-list-card.component.scss',
   inputs: ['editable', 'budget'],

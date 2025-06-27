@@ -8,7 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'budget-form',
-  imports: [CommonModule, MatIconModule, MatButtonModule, MatDividerModule],
+  imports: [CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './budget-form.component.html',
   styleUrl: './budget-form.component.scss',
 })

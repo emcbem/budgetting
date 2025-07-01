@@ -4,4 +4,7 @@ export interface Budget {
   percentage: number;
   currentTotal: number;
   isSavings: boolean;
+
+  //frontend only
+  isEditing: boolean;
 }

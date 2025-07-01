@@ -19,14 +19,12 @@
 
 .mat-column-name {
     border-right: 1px solid currentColor;
-    max-width: 10em;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;    
 
     &:not(.mat-mdc-header-cell) {
         font-weight: bold;
-
     }
 }
 
